@@ -18,7 +18,7 @@ CORS(app)
 
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
-lr = joblib.load("RandomForest_pickle.pkl") # Load "model.pkl"
+lr = joblib.load("RandomForest_pickle2k.pkl") # Load "model.pkl"
 
 print ('Model loaded')
 model_columns = joblib.load("columns9.pkl",mmap_mode='r') # Load "model_columns.pkl"
