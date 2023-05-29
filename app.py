@@ -33,9 +33,6 @@ def predict():
                 json_ = request.json
                 print("HI")
                 print(json_)
-                SSID = json_["SSID"]
-                del json_["SSID"]
-                print(json_)
                 # query = pd.get_dummies(pd.DataFrame(json_))
                 query = json_normalize(json_)
                 query = query
@@ -44,7 +41,7 @@ def predict():
                 # prediction = lr.predict([[-76,2462,2,0,2238648972,1873636,155885400,783102,4.0,61.124026,2]])
                 prediction = lr.predict(query)
                 print(prediction)
-                return jsonify({'SSID':SSID,'prediction': str(prediction)})
+                return jsonify({'SSID':'SSID','prediction': str(prediction)})
 
             except:
                 return jsonify({'trace': traceback.format_exc()})
